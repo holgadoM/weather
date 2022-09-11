@@ -1,12 +1,10 @@
-const locationController = require('../../controllers/v1/location')
+const currentController = require('../../controllers/v1/current')
 
 const currentRoutes = [
     {
         method:"GET",
         url:"/current/:city",
-        handler: (request, reply)=>{
-            reply.send({'msg' : 'Test /current'})
-        }
+        handler: currentController.current
     },
 ]
 
