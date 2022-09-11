@@ -4,13 +4,14 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "dev":"node src/server.js",
+    "dev": "node src/server.js",
     "test": "jest"
   },
   "author": "Holgado Martin",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.2",
-    "fastify": "^4.5.3"
+    "fastify": "^4.5.3",
+    "node-fetch": "^2.6.7"
   }
 }

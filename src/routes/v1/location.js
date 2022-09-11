@@ -1,10 +1,10 @@
+const locationController = require('../../controllers/v1/location')
+
 const locationRoutes = [
     {
         method:"GET",
         url:"/location",
-        handler: (request, reply)=>{
-            reply.send({'msg' : 'Test /location'})
-        }
+        handler: locationController.location
     },
 ]
 
