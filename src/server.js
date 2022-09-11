@@ -1,5 +1,5 @@
 const app = require('./app')
-require('dotenv').config({path:'./src/.env'})
+require('dotenv').config({path:'./.env'})
 
 const server = app({
   logger: {
