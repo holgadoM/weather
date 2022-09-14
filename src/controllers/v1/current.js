@@ -2,7 +2,7 @@ const { current_get_information } = require("../../services/current.service")
 
 const current = async (req, reply)=>{
     const {city} = req.params
-    const ip = req.socket.remoteAddress
+    const ip = req.ip
 
     try {
 
