@@ -1,4 +1,4 @@
-const { current_get_information } = require("../../services/v1/current.service")
+const { current_get_information } = require("../../services/current.service")
 
 const current = async (req, reply)=>{
     const {city} = req.params

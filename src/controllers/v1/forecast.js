@@ -1,4 +1,4 @@
-const { forecast_get_information } = require("../../services/v1/forecast.service")
+const { forecast_get_information } = require("../../services/forecast.service")
 
 const forecast = async (req, reply)=>{
     const {city} = req.params
