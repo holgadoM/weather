@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const supertest = require('supertest')
 // import {build as app} from './app.js'
 const build = require('../app')
@@ -13,7 +14,7 @@ beforeAll( async ()=>{
 describe('Test /location',()=>{
 
     test('Response a Json format', async ()=>{
-        const res = await supertest(app.server)
+        await supertest(app.server)
         .get('/v1/location')
         .set('Accept', 'application/json')
         .set('X-Forwarded-For', my_ip)

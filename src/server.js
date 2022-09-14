@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const app = require('./app')
 require('dotenv').config({path:'./.env'})
 
@@ -6,6 +7,7 @@ const server = app({
     level: 'info',
   }
 })
+
 
 server.listen({ port: process.env.PORT ?? 3000 }, (err, address) => {
   if (err) {

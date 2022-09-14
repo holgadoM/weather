@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const supertest = require('supertest')
 const build = require('../app')
 const { current_get_information } = require('../services/current.service')
