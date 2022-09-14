@@ -1,10 +1,10 @@
-const utils = require('../../utils/ip_information')
+const { getIpInformation } = require('../../services/api.service')
 
 const location = async (req, reply)=>{
     const ip = req.ip
 
     try {
-        const data = await utils.getIpInformation(ip)
+        const data = await getIpInformation(ip)
         reply.send(data)
     } catch (error) {
         console.log('Error => ', error);
