@@ -1,32 +1,14 @@
-const { getIpInformation } = require("../../utils/ip_information")
-const { getCityInformation, getWeather } = require("../../utils/weather_api")
+const { current_get_information } = require("../../services/current.service")
 
 const current = async (req, reply)=>{
     const {city} = req.params
+    const ip = req.ip
 
     try {
 
-        var objResponse = {};
+        const response = await current_get_information(city, ip)
 
-        if(!city || city === 'null' || city === 'undefined' ){
-            const ip = req.socket.remoteAddress
-            
-            const ip_information = await getIpInformation(ip)
-            objResponse['ip_information'] = ip_information
-            if( ip_information['status'] === 'success' ){
-                const weather_information = await getWeather(ip_information['lat'], ip_information['lon'])
-                objResponse['weather_information'] = weather_information
-            }
-        }else{
-            const city_information = await getCityInformation(city)
-            objResponse['city_information'] = city_information
-            if( city_information.length > 0 ){
-                const weather_information = await getWeather(city_information[0]['lat'], city_information[0]['lon'])
-                objResponse['weather_information'] = weather_information
-            }
-        }
-
-        reply.send({...objResponse})
+        reply.send(response)
         
     } catch (error) {
         console.log(error)
