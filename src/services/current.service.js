@@ -1,5 +1,4 @@
-const { getIpInformation } = require("../utils/ip_information")
-const { getCityInformation, getWeather } = require("../utils/weather_api")
+const { getCityInformation, getWeather,getIpInformation } = require("./api.service")
 
 const current_get_information = async (city, ip)=>{
 
