@@ -1,7 +1,7 @@
 const utils = require('../../utils/ip_information')
 
 const location = async (req, reply)=>{
-    const ip = req.socket.remoteAddress
+    const ip = req.ip
 
     try {
         const data = await utils.getIpInformation(ip)
