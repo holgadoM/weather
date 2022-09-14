@@ -5,7 +5,8 @@ const location = async (req, reply)=>{
 
     try {
         const data = await getIpInformation(ip)
-        reply.send(data)
+        const code = data['status'] == 'success' ? 200 : 404
+        reply.code( code ).send(data)
     } catch (error) {
         console.log('Error => ', error);
         reply.code(400).send({'msg':" we could not get the information "})
