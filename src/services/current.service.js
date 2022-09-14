@@ -5,7 +5,7 @@ const current_get_information = async (city, ip)=>{
 
     var objResponse = {};
 
-        if(!city || city === 'null' || city === 'undefined' ){
+        if(!city || city === 'null' || city === 'undefined' || city.length == 0 ){
             const ip_information = await getIpInformation(ip)
             objResponse['ip_information'] = ip_information
             if( ip_information['status'] === 'success' ){
