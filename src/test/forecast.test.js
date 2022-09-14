@@ -1,6 +1,6 @@
+/* eslint-disable no-undef */
 const supertest = require('supertest')
 const build = require('../app')
-const { buildRequest } = require('fastify/lib/request')
 const { forecast_get_information } = require('../services/forecast.service')
 
 const my_ip = '181.46.66.9'
